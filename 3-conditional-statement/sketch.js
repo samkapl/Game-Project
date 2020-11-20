@@ -6,7 +6,7 @@ let me;
 
 
 function setup() {
-  createCanvas(500, 400);
+  createCanvas(800, 400);
 
   //make one avatar called me
   me = new Avatar(width/2, 300, 3);
@@ -14,8 +14,11 @@ function setup() {
 }
 
 function draw(){
-	background(220);
-
+	background(115, 239, 250);
+ noStroke();
+  fill("green");
+  textSize(100);
+  text("??'()/'??'()/'???'??/'()()", 0,450,);
   me.drawMe();
   me.moveMe();
 
@@ -44,31 +47,43 @@ class Avatar {
 	}
 
 	drawMe(){  // draw the running person
-    		stroke("green");
+    		stroke("pink");
         strokeWeight(3);
-    		fill("blue");
-		    ellipse(this.x,this.y,20,20);
-        line(this.x,this.y, this.x, this.y+40);
-        line(this.x, this.y+40, this.x-20, this.y+60);
-        line(this.x, this.y+40, this.x+10, this.y+50);
-        line(this.x+10, this.y+50, this.x+5, this.y+60);
-        line(this.x, this.y+15, this.x-10, this.y+25);
-        line(this.x-10, this.y+25, this.x+10, this.y+35);
+    		fill("orange");
+		    ellipse(this.x,this.y,40,30);
+        noStroke();
+        fill(255);
+        ellipse(this.x + 8, this.y, 10, 15);
+        fill(0);
+        ellipse(this.x + 9, this.y, 7, 9);
+        fill(255);
+        ellipse(this.x + 8, this.y - 2, 2, 2);
+        stroke("pink");
+        fill("orange");
+        triangle(this.x - 20, this.y, this.x - 30, this.y - 15, this.x -30, this.y + 15,this.x - 20, this.y);
+
+
+
+
 	}
 
 	moveMe(){
-    if (keyIsDown(UP_ARROW)) { //if you hold the up arrow, move up by speed
-       this.y -= this.speed;
+    if (keyIsDown(LEFT_ARROW)) { //if you hold the up arrow, move up by speed
+       this.x -= this.speed;
     }
 
-    if (keyIsDown(DOWN_ARROW)) { // if you hold the down arrow, move down by speed
-        this.y += this.speed;
+    if (keyIsDown(RIGHT_ARROW)) { // if you hold the down arrow, move down by speed
+        this.x += this.speed;
     }
-	}
 
-  die(){
-
+    if (keyIsDown(UP_ARROW)) { // if you hold the down arrow, move down by speed
+        this.y -= this.speed;
+      }
+   if (keyIsDown(DOWN_ARROW)) { // if you hold the down arrow, move down by speed
+          this.y += this.speed;
+}
   }
+
 
 }
 
@@ -88,7 +103,11 @@ class Ball {
     	stroke(0);
       strokeWeight(1);
     	fill("red");
-		  ellipse(this.x,this.y,10,10);
+		  ellipse(this.x,this.y,50,10);
+      fill(0);
+      triangle(this.x + 25, this.y, this.x + 40, this.y - 12, this.x + 40, this.y + 12, this.x + 25, this.y);
+      ellipse(this.x-10, this.y, 5, 5);
+
 	}
 
 	//update the location of the ball, so it moves across the screen
