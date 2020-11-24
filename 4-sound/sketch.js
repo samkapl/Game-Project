@@ -7,8 +7,8 @@ let me;
 let mySound;
 
 function preload() {
-  soundFormats('mp3', 'ogg');
-  mySound = loadSound('boing1.mp3');
+  soundFormats('wav', 'mp3');
+  mySound = loadSound('sound1.mp3');
 }
 
 function setup() {
@@ -50,16 +50,11 @@ class Avatar {
 	}
 
 	drawMe(){  // draw the running person
-    		stroke("green");
+    		stroke("pink");
         strokeWeight(3);
-    		fill("blue");
-		    ellipse(this.x,this.y,20,20);
-        line(this.x,this.y, this.x, this.y+40);
-        line(this.x, this.y+40, this.x-20, this.y+60);
-        line(this.x, this.y+40, this.x+10, this.y+50);
-        line(this.x+10, this.y+50, this.x+5, this.y+60);
-        line(this.x, this.y+15, this.x-10, this.y+25);
-        line(this.x-10, this.y+25, this.x+10, this.y+35);
+    		ellipse(this.x, this.y, 40, 40);
+        ellipse(this.x, this.y +10, 40,40)
+        ellipse(this.x, this.y+30, 40,40 )
 	}
 
 	moveMe(){
@@ -93,8 +88,10 @@ class Ball {
 	drawBall(){
 		stroke(0);
   	strokeWeight(1);
-		fill("red");
+		fill("purple");
 		ellipse(this.x,this.y,10,10);
+    ellipse(this.x + 10, this.y, 30, 40)
+    line(this.x, this.y, this.x +10, this.y);
 	}
 
 	//update the location of the ball, so it moves across the screen
