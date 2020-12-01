@@ -10,12 +10,13 @@ function preload() {
 //
 //   //create an animation from a sequence of numbered images
 //   //pass the first and the last file name and it will try to find the ones in between
-  cactus = loadAnimation('sprites/cactus001.png ', 'sprites/cactus010.png');
+
+  cactus = loadAnimation('sprites/cactus001.png', 'sprites/cactus010.png');
 
 }
 
 function setup() {
-  createCanvas(800, 800);
+  createCanvas(900, 900);
 }
 
 function draw() {
@@ -23,6 +24,8 @@ function draw() {
 
   //specify the animation instance and its x,y position
   //animation() will update the animation frame as well
-  animation(cactus, 300, 300);
-
+push();
+scale(.25);
+  animation(cactus, 700, 700);
+pop();
 }
